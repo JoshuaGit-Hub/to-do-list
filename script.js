@@ -2,7 +2,11 @@ const lista = document.getElementById('container-list');
 const input = document.getElementById('input');
 
 input.addEventListener("keydown", (e) => {
+    
+    
     if(e.key === 'Enter' && input.value.trim() !== ""){
+        lista.style.display = 'block';
+        
         lista.style.opacity = '1';
 
         const text = input.value;
@@ -46,13 +50,9 @@ input.addEventListener("keydown", (e) => {
 
         spanTrash.addEventListener('click', () => {
 
-            spanTexto.remove();
-            spanBox.remove();
-            inputCheck.remove();
-            spanTrash.remove();
-            novoLi.remove();
+            novoLi.remove(); 
 
-            if(lista.hasChildNodes()){
+            if(lista.children.length === 0){
                 lista.style.display = 'none';
             }
         });
