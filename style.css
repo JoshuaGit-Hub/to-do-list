@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-:root{
+:root {
     --color-fundo: #383838;
     --color-fundo-container: #282828;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
+    padding: 20px;
     height: 100vh;
     background-color: var(--color-fundo);
     font-family: 'Sriracha';
 }
 
-#container{
+#container {
     display: flex;
     flex-direction: column;
     height: auto;
@@ -31,7 +32,7 @@ body{
     border-radius: 10px;
 }
 
-#container h1{
+#container h1 {
     color: wheat;
     text-align: center;
     width: 100%;
@@ -39,15 +40,64 @@ body{
     border-bottom: 1px white solid;
 }
 
-#container-list{
+#container-list {
     background-color: #181818;
     color: wheat;
     padding: 10px;
     margin-top: 30px;
     border-radius: 10px;
+    list-style: none;
+    transition: 1s;
+    opacity: 0;
 }
 
-#input{
+#container-list li {
+    padding: 10px 20px;
+    border-bottom: 1px solid white;
+    word-break: break-word;
+}
+
+.checkbox input {
+  display: none;
+}
+
+.checkbox .caixa {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  margin-right: 8px;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checkbox input:checked + .caixa {
+  background: green;
+  border-color: green;
+  position: relative;
+}
+
+.checkbox input:checked + .caixa::after {
+  content: "✔";
+  color: white;
+  position: absolute;
+  left: 3px;
+  top: -2px;
+  font-size: 16px;
+}
+
+.checkbox .texto {
+  vertical-align: middle;
+}
+
+.checkbox input:checked ~ .texto {
+  text-decoration: line-through;
+  color: gray;
+}
+
+#input {
     margin-top: 20px;
     background-color: #383838;
     padding: 20px;
@@ -55,4 +105,15 @@ body{
     border-radius: 5px;
     box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.486);
     color: wheat;
+}
+
+#container-input{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+#container-input label{
+    color: wheat;
+    font-size: 1.5em;
 }
